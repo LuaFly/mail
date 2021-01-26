@@ -13,9 +13,58 @@ body {
   height: 200px;
   background: #ff5eea;
   border-radius: 0 0 5px 5px;
-  box-shadow: 2 2 2px #ff5eea inset;
+  box-shadow: 2px 2px 2px #ff5eea inset;
 }
-
+.faixa {
+  background: #e7eedf;
+  position: relative;
+  margin: -5% 5% 0 -5%;
+  width: 110%;
+  color: #b1b8a9;
+  line-height:40px;
+  height:40px;
+  text-align: center;
+}
+.faixa:before, .faixa:after{
+  content: '';
+  line-height:0;
+  border-style:solid;
+  border-width: 20px;
+  position: absolute;
+  top:20px;
+  z-index: -2000;
+  width:5px;
+}
+.faixa:before {
+  border-color: #c3cabb #c3cabb #c3cabb transparent;
+  left: -25px;
+}
+.faixa:after {
+  right: -25px;
+  border-color: #c3cabb transparent #c3cabb #c3cabb;
+}
+.faixa p:before, .faixa p:after{
+  position: absolute;
+  content: '';
+  height: 0;
+  line-height:1px;
+  border-style:solid;
+  border-width: 10px;
+  z-index:-1999;
+}
+.faixa p:before{
+  border-color: #888f80 #888f80 transparent transparent;
+  bottom:-20px;
+  left: 0;
+}
+.faixa p:after{
+  border-color: #888f80 transparent transparent #888f80;
+  bottom:-20px;
+  right: 0;
+}
+.faixa p {
+  text-align: center;
+}
 .envelope:after {
   content: "";
   position: absolute;
@@ -23,8 +72,6 @@ body {
   height: 0;
   border: 0 solid transparent;
   border-width: 100px 230px;
-}
-.envelope:after {
   border-right-color: #fc44e4;
   border-left-color: #fc44e4;
   border-bottom-color: #b3109c;
